@@ -47,7 +47,7 @@ if st.button("Classify"):
             resp.raise_for_status()
             st.success("Results")
             st.dataframe(
-                {"Headline": clean, "Sentiment": resp.json()["predictions"]},
+                {"Headline": clean, "Sentiment": resp.json()["labels"]},
                 use_container_width=True,
             )
         except Exception as err:
